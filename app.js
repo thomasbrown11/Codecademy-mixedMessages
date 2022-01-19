@@ -11,5 +11,11 @@ let randomDirection = directionArray[Math.floor(Math.random() * 5)];
 //console.log(luckArray[Math.floor(Math.random() * 5)]);
 //console.log(fortuneArray[Math.floor(Math.random() * 5)]);
 //console.log(directionArray[Math.floor(Math.random() * 5)]);
-console.log(`You are having ${randomLuck} luck. ${randomFortune}. You should 
-${randomDirection}.`); 
+/* console.log(`You are having ${randomLuck} luck. ${randomFortune}. You should 
+${ randomDirection }.`); */
+
+let fortuneFunc = () => {
+  return `You are having ${randomLuck} luck.${randomFortune}. You should ${randomDirection}.`;
+};
+
+console.log(fortuneFunc());
