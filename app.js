@@ -26,10 +26,10 @@ console.log(fortuneButton());
 //Refactor 
 
 const allPredictions = {
-  luckType: ["good", "bad", "fair", "dangerous", "great"],
+  luckType: ["good", "bad", "fair", "dangerous", "great", "weird", "hard"],
   fortune: ['You will inherit a large sum of money',
     'You will meet a new friend', 'You will gain noteriety in a relevant field',
-    'You will lose something important', 'You will find the answer soon'],
+    'You will lose something important', 'You will find the answer soon', 'You will take a big trip'],
   direction: ['avoid a risky situation', 'reach out to a loved one',
     'heed upcoming advice', 'take a new risk', 'take some time for yourself']
 };
@@ -39,3 +39,12 @@ const allPredictions = {
 //and this for accessing the value of a key
 //console.log(allPredictions.fortune);
 //console.log(allPredictions.direction);
+
+// for finding a random number based on current key-value array 
+// let randomNumber = Math.floor(Math.random) * allPredictions.prop.length(); 
+
+for (let prop in allPredictions) {
+  //find random index number to push 
+  let randomNum = Math.floor(Math.random() * allPredictions[prop].length);
+  //console.log(randomNum);
+}
