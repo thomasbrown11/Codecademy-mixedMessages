@@ -39,12 +39,21 @@ const allPredictions = {
 //and this for accessing the value of a key
 //console.log(allPredictions.fortune);
 //console.log(allPredictions.direction);
-
-// for finding a random number based on current key-value array 
-// let randomNumber = Math.floor(Math.random) * allPredictions.prop.length(); 
-
+let outputArray = [];
+//loop through allPredictions and push to an output array 
 for (let prop in allPredictions) {
   //find random index number to push 
   let randomNum = Math.floor(Math.random() * allPredictions[prop].length);
   //console.log(randomNum);
-}
+  if (prop === 'luckType') {
+    //console.log(allPredictions.luckType[randomNum])
+    outputArray.push(`You are having ${allPredictions.luckType[randomNum]} luck.`)
+  } else if (prop === 'fortune') {
+    //console.log(allPredictions.fortune[randomNum]);
+    outputArray.push(allPredictions.fortune[randomNum]);
+  } else if (prop === 'direction') {
+    //console.log(allPredictions.direction[randomNum]);
+    outputArray.push(allPredictions.direction[randomNum]);
+  }
+};
+console.log(outputArray);
