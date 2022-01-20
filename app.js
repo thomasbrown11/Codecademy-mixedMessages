@@ -25,6 +25,7 @@ console.log(fortuneButton());
 
 //Refactor 
 
+//Storage object for all fortune info 
 const allPredictions = {
   luckType: ["good", "bad", "fair", "dangerous", "great", "weird", "hard"],
   fortune: ['You will inherit a large sum of money',
@@ -47,13 +48,19 @@ for (let prop in allPredictions) {
   //console.log(randomNum);
   if (prop === 'luckType') {
     //console.log(allPredictions.luckType[randomNum])
-    outputArray.push(`You are having ${allPredictions.luckType[randomNum]} luck.`)
+    outputArray.push(`You are having ${allPredictions.luckType[randomNum]} luck...`)
   } else if (prop === 'fortune') {
     //console.log(allPredictions.fortune[randomNum]);
-    outputArray.push(allPredictions.fortune[randomNum]);
+    outputArray.push(`${allPredictions.fortune[randomNum]}.`);
   } else if (prop === 'direction') {
     //console.log(allPredictions.direction[randomNum]);
-    outputArray.push(allPredictions.direction[randomNum]);
+    outputArray.push(`You should ${allPredictions.direction[randomNum]}.`);
   }
 };
-console.log(outputArray);
+
+//calling fortuneButton outputs all outputArray elements as a properly formatted string.
+let fortuneButton = () => {
+  return outputArray.join(' ');
+};
+//Test function to print through Node
+console.log(fortuneButton());
